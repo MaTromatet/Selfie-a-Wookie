@@ -1,0 +1,17 @@
+<h1>{{ title }}</h1>
+<h2>{{ subTitle }}</h2>
+
+<img
+  *ngIf="logoAffiche; else contraireIf"
+  src="https://www.funnylla.com/articles-images/207/one-fun-day-in-the-life-of-a-wookie_big.jpg"
+  alt="wookies en voitures"
+  srcset=""
+/>
+
+<ng-template #contraireIf>
+  <b>Pas d'image</b>
+</ng-template>
+
+<ul>
+  <li *ngFor="let unSelfie of lesSelfies">{{ unSelfie.wookie.nom }}</li>
+</ul>

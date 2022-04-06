@@ -1,0 +1,22 @@
+quelle est la version d angular ?
+13.3.1 avec ng --version dans le terminal
+
+l'ordre chargement JS , qui premier ?
+runtime.JS
+polyfills.JS
+style.JS
+vendor.JS
+main.JSP
+
+A quel endroit on indique ou est le dossier du code ?
+
+Comment s apelle se fichier ? on y trouve quoi d'autre ? 2 autres
+
+tsconfig.json
+
+Ou se trouve pour faire des Tests unitaires ?
+
+Ou se trouve la notion de configuration ?
+
+commment on charge les composants et lesquels ?
+
