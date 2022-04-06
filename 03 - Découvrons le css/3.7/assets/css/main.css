@@ -1,0 +1,14 @@
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  color: green;
+  background-color: brown;
+  text-align: center;
+}
+
+.textCentreEtColoreRouge {
+  color: red;
+  text-align: center;
+}

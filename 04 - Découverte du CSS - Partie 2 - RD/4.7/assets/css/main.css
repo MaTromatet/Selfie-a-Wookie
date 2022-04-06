@@ -1,0 +1,66 @@
+img {
+  width: 100%;
+  height: auto;
+}
+
+.debug {
+  border: solid red 1px;
+}
+
+.header {
+  left: 0;
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-t-50 {
+  margin-top: 50px;
+}
+
+.p-10 {
+  padding: 10px;
+}
+
+.auMax {
+  width: 100%;
+}
+
+.container {
+}
+
+.container .row {
+}
+
+.container .flexible {
+  display: flex;
+}
+
+.container .row .col {
+}
+
+.autoMargin {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.taille-container {
+  width: 250px;
+}
+
+@media screen and (max-width: 500px) {
+  .taille-container {
+    width: 100px;
+  }
+}
