@@ -1,0 +1,39 @@
+<article class="row mb-3 Regular shadow">
+
+    <header class="col">
+        <div class="row">
+            <div class="col-9">
+                <h2>{{ unSelfie.titre}}</h2>
+            </div>
+            <div class="col text-end">
+                [...]
+            </div>
+        </div>
+    </header>
+
+    <!-- force le retour à la ligne -->
+    <div class="w-100"></div>
+
+    <div class="col pb-2">
+        <img class="img-fluid " [src]="unSelfie.image" alt="">
+        <!-- ou src={{unSelfie.image}} -->
+    </div>
+
+    <!-- force le retour à la ligne
+    <div class="w-100"></div>
+
+    <div class="col pb-2 footer">
+        <div class="d-flex">
+            <div class="me-2">
+                 Button trigger modal 
+    <a type="button" class="" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-heart"></i> </a>
+
+    </div>
+    <div>
+        <i class="fa-solid fa-heart"></i>
+    </div>
+    </div>
+    </div> -->
+
+</article>

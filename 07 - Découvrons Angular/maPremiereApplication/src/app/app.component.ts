@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Selfie } from './models/selfie';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +9,4 @@ export class AppComponent {
   title = 'Selfie a wookies';
   subTitle = 'La super application';
   logoAffiche = true;
-  lesSelfies: Selfie[] = [
-    { image: '', wookie: { nom: 'Chewie', selfies: [] } },
-    { image: '', wookie: { nom: 'Chewie 2', selfies: [] } },
-  ];
 }

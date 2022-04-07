@@ -1,0 +1,6 @@
+<!-- <ul>
+    <li *ngFor="let unSelfie of lesSelfies">{{ unSelfie.wookie.nom }}</li>
+</ul> -->
+
+
+<app-un-selfie-readonly [unSelfie]="selfie" *ngFor="let selfie of lesSelfies"></app-un-selfie-readonly>
