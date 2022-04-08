@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Selfie } from 'src/app/models/selfie';
+import { LoggerService } from '../../../shared/services/logger/logger.service';
+import { SelfieService } from '../../../shared/services/selfies/selfie.service';
 
 @Component({
   selector: 'app-selfie-list',
@@ -7,19 +9,7 @@ import { Selfie } from 'src/app/models/selfie';
   styleUrls: ['./selfie-list.component.css'],
 })
 export class SelfieListComponent implements OnInit {
-  lesSelfies: Selfie[] = [
-    {
-      image:
-        'https://www.theriderpost.com/wp-content/uploads/2016/06/896e3e36d885874856df151425f1ce5484412952-1.jpeg',
-      wookie: { nom: 'Chewie', selfies: [] },
-      titre: 'titre : un super selfie',
-    },
-    {
-      image: 'http://www.groomlidays.com/wp-content/uploads/2016/07/Wookie.jpg',
-      wookie: { nom: 'Chewie 2', selfies: [] },
-      titre: 'titre : encore un autre',
-    },
-  ];
+  lesSelfies: Selfie[] = [];
 
   //avec le set, ca devient une propriété au lieu d'un attribu public et on peut y mettre du code
   @Input()
@@ -27,7 +17,12 @@ export class SelfieListComponent implements OnInit {
     console.log('SelfieListComponent ' + valeur);
   }
 
-  constructor() {}
+  constructor(
+    private _loggerService: LoggerService,
+    private _selfieService: SelfieService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.lesSelfies = this._selfieService.getAllSelfies();
+  }
 }

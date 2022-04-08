@@ -3,6 +3,6 @@ import { Selfie } from './selfie';
  * Classe représentant le wookie
  */
 export class Wookie {
-  nom!: string;
+  nom: string = '';
   selfies: Selfie[] = [];
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoggerService } from './shared/services/logger/logger.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,15 @@ export class AppComponent {
   subTitle = 'La super application';
   valeurARechercher = '';
 
+  // private _loggerService: LoggerService = null;
+  // constructor(loggerService: LoggerService) {
+  //   this._loggerService = loggerService;
+  // }
+  //Equivaut à :
+  constructor(private LoggerService: LoggerService) {}
+
   rechercherSelfies(valeurDeRecherche: string) {
-    //console.log('AppComponent : ' + valeurDeRecherche);
+    this.LoggerService.log('AppComponent : ' + valeurDeRecherche);
     this.valeurARechercher = valeurDeRecherche;
   }
 }
