@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Selfie } from 'src/app/models/selfie';
 
 @Component({
@@ -20,6 +20,12 @@ export class SelfieListComponent implements OnInit {
       titre: 'titre : encore un autre',
     },
   ];
+
+  //avec le set, ca devient une propriété au lieu d'un attribu public et on peut y mettre du code
+  @Input()
+  set filtre(valeur: string) {
+    console.log('SelfieListComponent ' + valeur);
+  }
 
   constructor() {}
 

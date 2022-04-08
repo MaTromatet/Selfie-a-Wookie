@@ -1,4 +1,6 @@
-<app-menu-general></app-menu-general>
+<!-- recupere depuis notre composant enfant "app-menu-general" l'element qui est cliqué à l'interieur de ce composant
+   grace à l'output de type eventEmitter qui renvoie un string-->
+<app-menu-general (lancerRecherche)="rechercherSelfies($event)"></app-menu-general>
 
 <h1>{{ title }}</h1>
 <h2>{{ subTitle }}</h2>
@@ -13,7 +15,7 @@
 
     <div class="col-sm-9">
 
-      <app-selfie-list></app-selfie-list>
+      <app-selfie-list [filtre]="valeurARechercher"></app-selfie-list>
 
     </div>
 

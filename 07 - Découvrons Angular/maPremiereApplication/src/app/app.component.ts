@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Selfie a wookies';
   subTitle = 'La super application';
-  logoAffiche = true;
+  valeurARechercher = '';
+
+  rechercherSelfies(valeurDeRecherche: string) {
+    //console.log('AppComponent : ' + valeurDeRecherche);
+    this.valeurARechercher = valeurDeRecherche;
+  }
 }
