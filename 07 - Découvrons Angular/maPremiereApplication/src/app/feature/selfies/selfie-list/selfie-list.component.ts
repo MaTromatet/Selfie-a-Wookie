@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Selfie } from 'src/app/models/selfie';
 import { LoggerService } from '../../../shared/services/logger/logger.service';
 import { SelfieService } from '../../../shared/services/selfies/selfie.service';
@@ -8,7 +9,14 @@ import { SelfieService } from '../../../shared/services/selfies/selfie.service';
   templateUrl: './selfie-list.component.html',
   styleUrls: ['./selfie-list.component.css'],
 })
-export class SelfieListComponent implements OnInit {
+export class SelfieListComponent implements OnInit, OnDestroy {
+  _lesSouscriptions: Subscription[] = [];
+
+  constructor(
+    private _loggerService: LoggerService,
+    private _selfieService: SelfieService
+  ) {}
+
   lesSelfies: Selfie[] = [];
 
   //avec le set, ca devient une propriété au lieu d'un attribu public et on peut y mettre du code
@@ -17,12 +25,21 @@ export class SelfieListComponent implements OnInit {
     console.log('SelfieListComponent ' + valeur);
   }
 
-  constructor(
-    private _loggerService: LoggerService,
-    private _selfieService: SelfieService
-  ) {}
-
   ngOnInit(): void {
-    this.lesSelfies = this._selfieService.getAllSelfies();
+    //pour recuperer les données en dur grace au selfieService
+    //this.lesSelfies = this._selfieService.getAllSelfies();
+
+    //pour souscrire à un observable
+    const subscriptionEnCours = this._selfieService
+      .getAllSelfies_asObservable()
+      .subscribe((unTableau) => (this.lesSelfies = unTableau)); // =  .subscribe (function (unTableau) {this.lesSelfies = unTableau})
+
+    //on récupère la souscription en cours dans le tableau de souscriptions
+    this._lesSouscriptions.push(subscriptionEnCours);
+  }
+
+  //si le composant est détruit, on désouscrire toutes les subscriptions
+  ngOnDestroy(): void {
+    this._lesSouscriptions.forEach((item) => item.unsubscribe());
   }
 }
