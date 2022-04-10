@@ -7,6 +7,7 @@ import { MenuGeneralComponent } from './shared/components/menu-general/menu-gene
 import { SelfieListComponent } from './feature/selfies/selfie-list/selfie-list.component';
 import { UnSelfieReadonlyComponent } from './feature/selfies/un-selfie-readonly/un-selfie-readonly.component';
 import { LoggerService } from './shared/services/logger/logger.service';
+import { AddSelfiesComponent } from './feature/selfies/add-selfies/add-selfies.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LoggerService } from './shared/services/logger/logger.service';
     MenuGeneralComponent,
     SelfieListComponent,
     UnSelfieReadonlyComponent,
+    AddSelfiesComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [

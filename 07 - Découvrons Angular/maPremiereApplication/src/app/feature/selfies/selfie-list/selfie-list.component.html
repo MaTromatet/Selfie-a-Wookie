@@ -2,5 +2,13 @@
     <li *ngFor="let unSelfie of lesSelfies">{{ unSelfie.wookie.nom }}</li>
 </ul> -->
 
+<div class="row">
+    <div class="col">
+        <button type="button" class="btn btn-success" (click)="demandeAfficherPourAjoutSelfie()">Ajouter un
+            selfie</button>
+    </div>
+</div>
+
+<app-add-selfies *ngIf="selfieAAjouter"></app-add-selfies>
 
 <app-un-selfie-readonly [unSelfie]="selfie" *ngFor="let selfie of lesSelfies"></app-un-selfie-readonly>

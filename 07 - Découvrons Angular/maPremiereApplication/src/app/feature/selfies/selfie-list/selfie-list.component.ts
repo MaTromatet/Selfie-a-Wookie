@@ -10,6 +10,10 @@ import { SelfieService } from '../../../shared/services/selfies/selfie.service';
   styleUrls: ['./selfie-list.component.css'],
 })
 export class SelfieListComponent implements OnInit, OnDestroy {
+  //Boolean pour savoir si on affiche le formulaire d'ajout de selfies
+  public selfieAAjouter: Selfie | null = null;
+
+  //liste des souscriptions
   _lesSouscriptions: Subscription[] = [];
 
   constructor(
@@ -41,5 +45,10 @@ export class SelfieListComponent implements OnInit, OnDestroy {
   //si le composant est détruit, on désouscrire toutes les subscriptions
   ngOnDestroy(): void {
     this._lesSouscriptions.forEach((item) => item.unsubscribe());
+  }
+
+  //methode d'affichage du formulaire d'ajout de selfies
+  demandeAfficherPourAjoutSelfie(): void {
+    this.selfieAAjouter = new Selfie();
   }
 }
