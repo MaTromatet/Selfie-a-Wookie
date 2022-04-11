@@ -9,8 +9,9 @@
             <input type="text" #titre="ngModel" name="titre" [(ngModel)]="selfieARenseigner.titre" required>
 
             <!-- si le input est valid, le span est caché, sinon il est visible -->
-            <span [style.visibility]="titre.valid ? 'hidden' : 'visible'"> Titre Obligatoire !</span>
-            <span [hidden]="titre.valid "> Titre Obligatoire 2 !</span>
+            <!-- <span [style.visibility]="titre.valid ? 'hidden' : 'visible'"> Titre Obligatoire !</span> -->
+            <!-- ou -->
+            <span [hidden]="titre.valid "> Titre Obligatoire !</span>
         </div>
     </div>
 

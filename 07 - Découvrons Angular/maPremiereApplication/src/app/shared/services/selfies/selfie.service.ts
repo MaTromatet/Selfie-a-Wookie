@@ -26,6 +26,7 @@ export class SelfieService {
    *
    * @returns Retourne la liste complete des selfies (2 elements en dur)
    */
+  /*
   getAllSelfies(): Selfie[] {
     const tableau: Selfie[] = [];
 
@@ -48,7 +49,7 @@ export class SelfieService {
 
     return tableau;
   }
-
+*/
   //----------------------------------------------------------------------------------------------------------------------------------
 
   /**
@@ -100,5 +101,14 @@ export class SelfieService {
     //3em Test
     // recupere les requetes http via api simulé par Postman
     return this._httpClient.get<Selfie[]>(environment.apis.selfies.url);
+  }
+
+  /**
+   * Ajout d'un Selfie : envoie des données en json vers l'api et récupération du selfie ajouté
+   * @param selfie
+   * @returns
+   */
+  ajouter(selfie: Selfie): Observable<Selfie> {
+    return this._httpClient.post<Selfie>(environment.apis.selfies.url, selfie);
   }
 }

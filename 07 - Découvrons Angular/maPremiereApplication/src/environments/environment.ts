@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apis: {
     selfies: {
-      url: 'https://1e112068-4fb1-40e9-a8f3-163b778b149a.mock.pstmn.io/selfie',
+      url: 'https://2d18f7cd-4538-4adf-802f-60d68314fa4b.mock.pstmn.io/selfie',
     },
   },
 };
