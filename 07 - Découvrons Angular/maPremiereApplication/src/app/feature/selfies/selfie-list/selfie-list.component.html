@@ -9,6 +9,7 @@
     </div>
 </div>
 
-<app-add-selfies *ngIf="selfieAAjouter"></app-add-selfies>
+<app-add-selfies *ngIf="selfieAAjouter" [selfieARenseigner]="selfieAAjouter" (annulerAjouter)="cacherZoneAjoutSelfie()">
+</app-add-selfies>
 
 <app-un-selfie-readonly [unSelfie]="selfie" *ngFor="let selfie of lesSelfies"></app-un-selfie-readonly>

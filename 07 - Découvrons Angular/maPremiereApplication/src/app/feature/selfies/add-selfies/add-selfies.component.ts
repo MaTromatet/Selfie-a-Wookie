@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Selfie } from '../../../models/selfie';
 
 @Component({
   selector: 'app-add-selfies',
   templateUrl: './add-selfies.component.html',
-  styleUrls: ['./add-selfies.component.css']
+  styleUrls: ['./add-selfies.component.css'],
 })
 export class AddSelfiesComponent implements OnInit {
+  @Output()
+  public annulerAjouter: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor() { }
+  @Input()
+  selfieARenseigner: Selfie = new Selfie();
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  clickSurAnnulerSaisie() {
+    this.annulerAjouter.emit({});
   }
 
+  clickSurAjouterSaisie() {}
 }

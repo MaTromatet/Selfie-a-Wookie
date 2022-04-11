@@ -1,1 +1,28 @@
-<p>add-selfies works!</p>
+{{selfieARenseigner | json}}
+
+<!-- identifiant angular du formulaire de Type Template driven Form  : <form #IdentifiantFormulaire="ngForm">  -->
+<form #maForm="ngForm">
+    <div class="row">
+        <div class="col">Titre</div>
+        <!--[()] banana in the box  : Template driven Form  (TDF)-->
+        <div class="col">
+            <input type="text" name="titre" [(ngModel)]="selfieARenseigner.titre" required>
+            <span>Titre Obigatoire !</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <!-- Bouton submit qui est désactivé [disabled] si le formulaire n'est pas valide   -->
+            <button type="submit" [disabled]=" ! maForm.form.valid" (click)="clickSurAjouterSaisie()"
+                class="btn btn-primary">Nouveau
+                selfie</button>
+        </div>
+
+
+        <div class="col">
+            <button type="button" (click)="clickSurAnnulerSaisie()" class="btn btn-secondary">Annuler</button>
+        </div>
+
+    </div>
+</form>

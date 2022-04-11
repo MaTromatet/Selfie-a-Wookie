@@ -10,18 +10,18 @@ import { SelfieService } from '../../../shared/services/selfies/selfie.service';
   styleUrls: ['./selfie-list.component.css'],
 })
 export class SelfieListComponent implements OnInit, OnDestroy {
-  //Boolean pour savoir si on affiche le formulaire d'ajout de selfies
+  //Variable null si pas de selfies a ajouter sinon c'est le selfie a ajouter
   public selfieAAjouter: Selfie | null = null;
 
   //liste des souscriptions
   _lesSouscriptions: Subscription[] = [];
 
+  lesSelfies: Selfie[] = [];
+
   constructor(
     private _loggerService: LoggerService,
     private _selfieService: SelfieService
   ) {}
-
-  lesSelfies: Selfie[] = [];
 
   //avec le set, ca devient une propriété au lieu d'un attribu public et on peut y mettre du code
   @Input()
@@ -50,5 +50,10 @@ export class SelfieListComponent implements OnInit, OnDestroy {
   //methode d'affichage du formulaire d'ajout de selfies
   demandeAfficherPourAjoutSelfie(): void {
     this.selfieAAjouter = new Selfie();
+    this.selfieAAjouter.titre = 'test 01';
+  }
+
+  cacherZoneAjoutSelfie(): void {
+    this.selfieAAjouter = null;
   }
 }

@@ -8,6 +8,7 @@ import { SelfieListComponent } from './feature/selfies/selfie-list/selfie-list.c
 import { UnSelfieReadonlyComponent } from './feature/selfies/un-selfie-readonly/un-selfie-readonly.component';
 import { LoggerService } from './shared/services/logger/logger.service';
 import { AddSelfiesComponent } from './feature/selfies/add-selfies/add-selfies.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { AddSelfiesComponent } from './feature/selfies/add-selfies/add-selfies.c
     UnSelfieReadonlyComponent,
     AddSelfiesComponent,
   ],
-  imports: [BrowserModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [
     //LoggerService
   ],
