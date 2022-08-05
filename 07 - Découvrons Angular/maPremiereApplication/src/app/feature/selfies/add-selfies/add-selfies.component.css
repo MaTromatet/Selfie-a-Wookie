@@ -1,8 +1,10 @@
+/* le formulaire est valide */
 input.ng-valid {
   background-color: green;
   color: white;
 }
 
+/* le formulaire est invalide */
 input.ng-invalid {
   background-color: darkred;
   color: white;

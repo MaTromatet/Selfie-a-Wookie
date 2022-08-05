@@ -8,6 +8,7 @@ import { Selfie } from '../../../models/selfie';
   styleUrls: ['./add-selfies.component.css'],
 })
 export class AddSelfiesComponent implements OnInit {
+  
   @Output()
   public annulerAjouter: EventEmitter<any> = new EventEmitter<any>();
 

@@ -6,6 +6,7 @@
         <div class="col">Titre</div>
         <!--[()] banana in the box  : Template driven Form  (TDF)-->
         <div class="col">
+            <!-- on bind le model -->
             <input type="text" #titre="ngModel" name="titre" [(ngModel)]="selfieARenseigner.titre" required>
 
             <!-- si le input est valid, le span est caché, sinon il est visible -->
