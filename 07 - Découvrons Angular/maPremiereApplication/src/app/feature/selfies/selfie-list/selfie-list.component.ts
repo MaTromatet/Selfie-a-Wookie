@@ -10,6 +10,7 @@ import { SelfieService } from '../../../shared/services/selfies/selfie.service';
   styleUrls: ['./selfie-list.component.css'],
 })
 export class SelfieListComponent implements OnInit, OnDestroy {
+  
   //Variable null si pas de selfies a ajouter sinon c'est le selfie a ajouter
   public selfieAAjouter: Selfie | null = null;
 

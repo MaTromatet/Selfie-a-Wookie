@@ -99,12 +99,13 @@ export class SelfieService {
     //[{"image":"https://www.theriderpost.com/wp-content/uploads/2016/06/896e3e36d885874856df151425f1ce5484412952-1.jpeg","titre":"Trop bien le Skate","wookie":{"nom":"Chewie","selfies":[]}},{"image":"http://www.groomlidays.com/wp-content/uploads/2016/07/Wookie.jpg","titre":"Hey Baby !","wookie":{"nom":"Turloff","selfies":[]}}]
 
     //3em Test
-    // recupere les requetes http via api simulé par Postman
+    // recupere les requetes http via api Mock simulé par Postman
     return this._httpClient.get<Selfie[]>(environment.apis.selfies.url);
   }
 
   /**
-   * Ajout d'un Selfie : envoie des données en json vers l'api et récupération du selfie ajouté
+   * Ajout d'un Selfie : envoie des données en json vers l'api PostMan
+   *  et récupération du selfie ajouté
    * @param selfie
    * @returns
    */
