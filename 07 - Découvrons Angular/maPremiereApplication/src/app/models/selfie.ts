@@ -5,6 +5,7 @@ import { Wookie } from './wookie';
 export class Selfie {
   id: number | undefined;
   image: string = '';
+  imageAs63 : string='';
   wookie: Wookie;
   titre: string = '';
 
