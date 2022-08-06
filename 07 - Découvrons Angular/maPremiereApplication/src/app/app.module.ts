@@ -7,13 +7,16 @@ import { MenuGeneralComponent } from './shared/components/menu-general/menu-gene
 import { LoggerService } from './shared/services/logger/logger.service';
 import { SelfieModule } from './feature/selfies/selfie.module';
 import { SharedModule } from './shared/modules/shared/shared.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuGeneralComponent
+    MenuGeneralComponent,
+    NotFoundComponent
   ],
-  imports: [BrowserModule, HttpClientModule,SelfieModule,SharedModule],
+  imports: [BrowserModule, HttpClientModule,SelfieModule,SharedModule,AppRoutingModule],
   providers: [
     //LoggerService
   ],

@@ -5,6 +5,7 @@ import { AddSelfiesComponent } from './add-selfies/add-selfies.component';
 import { UnSelfieReadonlyComponent } from './un-selfie-readonly/un-selfie-readonly.component';
 import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 import {WebcamModule} from 'ngx-webcam';
+import { SelfiesRoutingModule } from './selfies-routing.module';
 
 
 
@@ -15,10 +16,10 @@ import {WebcamModule} from 'ngx-webcam';
     AddSelfiesComponent
   ],
   imports: [
-    CommonModule, SharedModule, WebcamModule
+    CommonModule, SharedModule, WebcamModule, SelfiesRoutingModule
   ],
   exports: [
-    SelfieListComponent,
+    SelfieListComponent
   ],
 })
 export class SelfieModule { }

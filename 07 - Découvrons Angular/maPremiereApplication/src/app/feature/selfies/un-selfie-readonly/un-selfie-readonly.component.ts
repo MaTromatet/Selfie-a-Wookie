@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Selfie } from '../../../models/selfie';
 
 @Component({
@@ -10,7 +11,11 @@ export class UnSelfieReadonlyComponent implements OnInit {
   @Input()
   public unSelfie: Selfie = new Selfie();
 
-  constructor() {}
+  constructor(private _router : Router) {}
 
   ngOnInit(): void {}
+
+  clickPourDuel(){
+    this._router.navigate(["/duels/nouveau"])
+  }
 }
