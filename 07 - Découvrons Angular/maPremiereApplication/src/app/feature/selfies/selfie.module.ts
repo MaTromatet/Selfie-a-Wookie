@@ -4,6 +4,7 @@ import { SelfieListComponent } from './selfie-list/selfie-list.component';
 import { AddSelfiesComponent } from './add-selfies/add-selfies.component';
 import { UnSelfieReadonlyComponent } from './un-selfie-readonly/un-selfie-readonly.component';
 import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
+import {WebcamModule} from 'ngx-webcam';
 
 
 
@@ -14,7 +15,7 @@ import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
     AddSelfiesComponent
   ],
   imports: [
-    CommonModule, SharedModule
+    CommonModule, SharedModule, WebcamModule
   ],
   exports: [
     SelfieListComponent,

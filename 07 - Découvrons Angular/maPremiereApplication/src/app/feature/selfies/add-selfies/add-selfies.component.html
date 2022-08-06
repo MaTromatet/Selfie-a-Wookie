@@ -18,6 +18,28 @@
 
     <div class="row">
         <div class="col">
+            Ton selfie
+        </div>
+
+        <div class="col">
+            <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+                    [videoOptions]="videoOptions"
+                    [imageQuality]="1"
+                    (initError)="handleInitError($event)"
+            ></webcam>
+            <button class="actionBtn" (click)="triggerSnapshot();">Prend un selfie !</button>
+        </div>
+    </div>
+
+    <div class="row snapshot" *ngIf="webcamImage">
+        <div class="col">
+            <h2>Nice one!</h2>
+            <img [src]="webcamImage.imageAsDataUrl"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
             <!-- Bouton submit qui est désactivé [disabled] si le formulaire n'est pas valide   -->
             <button type="submit" [disabled]=" ! maForm.form.valid" (click)="clickSurAjouterSaisie()"
                 class="btn btn-primary">Nouveau
