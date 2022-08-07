@@ -18,4 +18,11 @@ export class UnSelfieReadonlyComponent implements OnInit {
   clickPourDuel(){
     this._router.navigate(["/duels/nouveau"])
   }
+
+  clickPourConsultation(){
+    //TODO : renseigner l'id dans notre API
+    this.unSelfie.id=2;
+    //End TODO
+    this._router.navigate(["/selfies/consulter",this.unSelfie.id])
+  }
 }

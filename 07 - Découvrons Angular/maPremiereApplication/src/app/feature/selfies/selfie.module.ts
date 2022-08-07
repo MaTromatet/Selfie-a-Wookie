@@ -6,6 +6,7 @@ import { UnSelfieReadonlyComponent } from './un-selfie-readonly/un-selfie-readon
 import { SharedModule } from 'src/app/shared/modules/shared/shared.module';
 import {WebcamModule} from 'ngx-webcam';
 import { SelfiesRoutingModule } from './selfies-routing.module';
+import { UnSelfieComponent } from './un-selfie/un-selfie.component';
 
 
 
@@ -13,7 +14,8 @@ import { SelfiesRoutingModule } from './selfies-routing.module';
   declarations: [
     SelfieListComponent,
     UnSelfieReadonlyComponent,
-    AddSelfiesComponent
+    AddSelfiesComponent,
+    UnSelfieComponent
   ],
   imports: [
     CommonModule, SharedModule, WebcamModule, SelfiesRoutingModule
