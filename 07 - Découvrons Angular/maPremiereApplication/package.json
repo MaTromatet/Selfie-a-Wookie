@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --repo=https://github.com/MaTromatet/deployed-wookieApp.git --name=\"MaTromatet\" --email=mromatet@gmail.com --base-href=/deployed-wookieApp/"
+ 
   },
   "private": true,
   "dependencies": {
